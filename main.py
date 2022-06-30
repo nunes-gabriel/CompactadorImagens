@@ -1,21 +1,12 @@
 from PIL import Image
 import os
 
-# Alguns parâmetros para se definir:
+# Alguns parâmetros para se definir (*opcionais: novo_tamanho, fator):
 
-# Pasta de origem de onde serão retiradas as imagens.
-pasta_input = "input/"
-
-# Pasta de origem de onde serão retiradas as imagens.
-pasta_output = "output/"
-
-# Novo tamanho das imagens compactadas em kilobytes(kb).
-novo_tamanho = 50
-
-# Fator de diminuição dos pixels, quanto menor for, mais preciso
-# será o tamanho de saída dos arquivos, porém, mais lento será a
-# execução do código.
-fator = 50
+pasta_input = "input/" # Pasta de origem de onde serão retiradas as imagens
+pasta_output = "output/" # Pasta de saída onde serão salvas as imagens compactadas.
+novo_tamanho = 50 # Novo tamanho das imagens compactadas em kilobytes(kb)
+fator = 50 # Fator de diminuição dos pixels - pixels diminuidos por loop
 
 for nome_arquivo in os.listdir(pasta_input):
     atual_tamanho = os.stat(pasta_input + nome_arquivo).st_size / 1024
